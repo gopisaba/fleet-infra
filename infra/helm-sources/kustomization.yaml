@@ -1,3 +1,5 @@
 ---
 resources:
   - bitnami.yaml
+
+namespace: flux-system
