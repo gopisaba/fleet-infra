@@ -1,0 +1,5 @@
+---
+resources:
+  - nginx.yaml
+
+namespace: nginx
