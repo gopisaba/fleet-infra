@@ -1,6 +1,5 @@
 ---
 resources:
   - nginx.yaml
-  - secrets.yaml
 
 namespace: nginx
