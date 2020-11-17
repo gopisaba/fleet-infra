@@ -1,17 +1,23 @@
 ---
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  labels:
-    run: deploy/busybox
-  name: deploy/busybox
+  name: busybox
 spec:
-  containers:
-    - command:
-        - sleep
-        - "9999"
-      image: busybox:1.31.1
-      name: deploy/busybox
-      resources: {}
-  dnsPolicy: ClusterFirst
-  restartPolicy: Always
+  replicas: 1
+  selector:
+    matchLabels:
+      app: busybox
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: busybox
+    spec:
+      containers:
+        - command:
+            - sleep
+            - "9999"
+          image: busybox:1.31.1
+          name: busybox
+          resources: {}
